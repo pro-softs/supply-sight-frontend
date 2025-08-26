@@ -20,7 +20,6 @@ import {
   UPDATE_DEMAND,
   TRANSFER_STOCK,
 } from "@/lib/apollo";
-import { CombinedGraphQLErrors } from "@apollo/client";
 
 function MainPage() {
   const [dateRange, setDateRange] = useState("7d");

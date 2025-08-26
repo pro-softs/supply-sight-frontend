@@ -11,7 +11,7 @@ interface FiltersProps {
 }
 
 export const Filters = ({ filters, warehouses, onFiltersChange, loading }: FiltersProps) => {
-  const statusOptions = ['All', 'Healthy', 'Low', 'Critical'];
+  const statusOptions = [{ label: 'All', value: 'all'}, {label: 'Healthy', value: 'healthy'}, { label: 'Low', value: 'low'}, {label: 'Critical', value: 'critical'}];
 
   return (
     <div className="flex flex-col sm:flex-row gap-4 mb-6 p-4 bg-gray-50 rounded-lg border">
@@ -45,17 +45,17 @@ export const Filters = ({ filters, warehouses, onFiltersChange, loading }: Filte
       </Select>
       
       <Select
-        value={filters.status || 'All'}
-        onValueChange={(value) => onFiltersChange({ ...filters, status: value === 'All' ? undefined : value })}
+        value={filters.status || 'all'}
+        onValueChange={(value) => onFiltersChange({ ...filters, status: value === 'all' ? undefined : value })}
         disabled={loading}
       >
         <SelectTrigger className="w-full sm:w-[140px] text-sm">
           <SelectValue placeholder="All Status" />
         </SelectTrigger>
         <SelectContent>
-          {statusOptions.map((status) => (
-            <SelectItem key={status} value={status}>
-              {status}
+          {statusOptions.map(({ label, value }) => (
+            <SelectItem key={value} value={value}>
+              {label}
             </SelectItem>
           ))}
         </SelectContent>
