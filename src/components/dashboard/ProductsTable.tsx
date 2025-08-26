@@ -22,7 +22,7 @@ export const ProductsTable = ({
   onPageChange, 
   onProductClick 
 }: ProductsTableProps) => {
-  const getStatusBadge = (status: string, stock: number, demand: number) => {
+  const getStatusBadge = (status: string) => {
     const variants = {
       healthy: 'bg-green-50 text-green-700 border-green-200 hover:bg-green-100',
       low: 'bg-yellow-50 text-yellow-700 border-yellow-200 hover:bg-yellow-100',

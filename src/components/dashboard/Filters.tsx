@@ -46,7 +46,7 @@ export const Filters = ({ filters, warehouses, onFiltersChange, loading }: Filte
       
       <Select
         value={filters.status || 'All'}
-        onValueChange={(value) => onFiltersChange({ ...filters, status: value })}
+        onValueChange={(value) => onFiltersChange({ ...filters, status: value === 'All' ? undefined : value })}
         disabled={loading}
       >
         <SelectTrigger className="w-full sm:w-[140px] text-sm">

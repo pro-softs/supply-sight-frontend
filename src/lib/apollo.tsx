@@ -36,7 +36,7 @@ const errorLink = new ErrorLink(({ error, result }) => {
 
 // Mock GraphQL client setup
 export const client = new ApolloClient({
-  link: ApolloLink.from([errorLink, new HttpLink({ uri: "http://localhost:4000/graphql" })]),  // Mock endpoint
+  link: ApolloLink.from([errorLink, new HttpLink({ uri: "https://supply-sight-backend-production.up.railway.app/graphql" })]),  // Mock endpoint
   cache: new InMemoryCache(),
   defaultOptions: {
     watchQuery: {
